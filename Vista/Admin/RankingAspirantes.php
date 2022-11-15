@@ -29,34 +29,52 @@
     <main>
     <br><br><br>
         <section class="vh-100" >
-            <table class="default">
-
-                <tr>
-                    <th colspan="3">Usuarios Selecciondos</th>
-                    <th>Porcentaje de Evaluaciòn</th>
-                </tr>
-                <tr>
-                    <th>Mike</th>
-                    <td colspan="2">90%</td>
-                </tr>
-                <tr>
-                    <th>Susan</th>
-                    <td colspan="2">80%</td>
-                </tr>
-                    <th>Jackie</th>
-                    <td colspan="2">70%</td>
-                </tr>
-                <tr>
-                    <th>Julia</th>
-                    <td colspan="2">60%</td>
-                </tr>
-                <tr>
-                    <th>Alejandro</th>
-                    <td colspan="2">55%</td>
-                </tr>
-
-            </table>
-            
+        <div class="table-responsive">
+        <table class="table table-bordered ">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Apellido</th>
+          <th>Nombre</th>
+          <th>Porcentaje Examen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class= "table-success">
+          <td>1</td>
+          <td>Anna</td>
+          <td>Guadarrama</td>
+          <td>95%</td>
+        </tr>
+        <tr class="table-info">
+          <td>2</td>
+          <td>Sofia</td>
+          <td>Lopez</td>
+          <td>84%</td>
+        </tr>
+        <tr class="table-info">
+          <td>3</td>
+          <td>Elizabeth</td>
+          <td>Huerta</td>
+          <td>80%</td>
+        </tr>
+        <tr class="table-info">
+          <td>4</td>
+          <td>Sebastian</td>
+          <td>Salazar</td>
+          <td>75%</td>
+        </tr>
+        <tr class="table-info">
+          <td>5</td>
+          <td>Edwin</td>
+          <td>Moreno</td>
+          <td>70%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+        </div>    
         </section>
     </main>
     <!-- Footer -->

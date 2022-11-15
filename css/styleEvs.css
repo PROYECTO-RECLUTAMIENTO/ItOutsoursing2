@@ -1,13 +1,6 @@
 body {
-    background: #2d2d7f !important;
+    background: #efeff4 !important;
   }
-
-table´{
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  border: 3px solid purple;
-}
 
 thead th:nth-child(1) {
   width: 30%;
