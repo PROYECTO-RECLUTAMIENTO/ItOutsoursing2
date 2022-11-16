@@ -1,3 +1,7 @@
 body {
-    background: #2d2d7f !important;
+    /* background: #160a7c; */
+    background-image: url("../img/fondo.jpg");
+  }
+  #contenedorP{
+    border-radius: 2%;
   }
