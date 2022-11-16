@@ -49,7 +49,7 @@
               <div id="icono">
                   <img src="../../img/psicometrico.png" style="max-width:100%;width:auto;height:auto;max-height:80%;align:middle;">
               </div>
-                 <p>Conocimiento</p>
+                 <p>Psicometrico</p>
               <div id="txtExam2">
                 <p>Realizar primero el examen de conocimiento.</p>
               </div>

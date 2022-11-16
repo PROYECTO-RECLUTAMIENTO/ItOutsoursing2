@@ -53,9 +53,9 @@ function myFunction() {
                             <div class="form-outline mb-4">
                                 <H2>Examen de <b>conocimientos</b></H2>
                                 <p class="text-center fw-bold  mb-0">Ingrese los siguientes datos</p><br>
-                                <p><input type="text" id="nombre" class="form-control form-control-lg" placeholder="Ingresa tu nombre" required /></p>
-                                <p><input type="text" id="apellidoMaterno" class="form-control form-control-lg" placeholder="Ingresa tu apellido paterno" required /></p>
-                                <p><input type="text" id="apellidoPaterno" class="form-control form-control-lg" placeholder="Ingresa tu apellido materno" required /></p>
+                                <p><input type="text" id="nombre" class="form-control form-control-lg" pattern="[A-Za-z ]" placeholder="Ingresa tu nombre" required /></p>
+                                <p><input type="text" id="apellidoMaterno" class="form-control form-control-lg" pattern="[A-Za-z ]" placeholder="Ingresa tu apellido paterno" required /></p>
+                                <p><input type="text" id="apellidoPaterno" class="form-control form-control-lg"  pattern="[A-Za-z ]" placeholder="Ingresa tu apellido materno" required /></p>
                                 <p><input type="text" id="Folio" class="form-control form-control-lg" placeholder="Ingresa tu folio" required /></p>
                             </div>
 

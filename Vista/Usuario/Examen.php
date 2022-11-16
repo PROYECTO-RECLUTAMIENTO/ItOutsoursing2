@@ -53,7 +53,7 @@
 				<input type="radio" name="pregunta2" id="res6">
 				<label for="res6">nav.</label>
                 <br>
-				<input type="radio" name="pregnuta2" id="res7">
+				<input type="radio" name="pregunta2" id="res7">
 				<label for="res7">dir.</label>
                 <br>
 				<input type="radio" name="pregunta2" id="res8">
@@ -368,13 +368,7 @@
                 </div>
 		</div>
 </div>
-    <main>
-    <br><br><br>
-        <section class="vh-100" >
-           
-            
-        </section>
-    </main>
+    
     <!-- Footer -->
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->

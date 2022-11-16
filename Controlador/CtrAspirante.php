@@ -2,8 +2,6 @@
 require 'Config/conexion.php';
 class CtrAspirante{
 
-
-
     function fechasExamenes(){
 
         $objeto = new Conexion("sql9.freemysqlhosting.net","sql9574012","HDHmBbJhbI","sql9574012");
