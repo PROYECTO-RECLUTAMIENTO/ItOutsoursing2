@@ -30,7 +30,7 @@
     <main>
     <br><br><br>
         <section class="vh-100" >
-          <h1>Evaluaciones</h1>
+          <h1 >Evaluaciones</h1>          
           <div id="exam">
             <div id="exam1">
               <div id="icono">

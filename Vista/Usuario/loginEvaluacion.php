@@ -17,7 +17,7 @@ function myFunction() {
     icon: 'question',
     iconHtml: '?',
     
-  })
+  });
 }
 </script>
 <body>
@@ -51,7 +51,9 @@ function myFunction() {
                             </center>
                             <!-- Email input -->
                             <div class="form-outline mb-4">
+                                <center>
                                 <H2>Examen de <b>conocimientos</b></H2>
+                                </center>
                                 <p class="text-center fw-bold  mb-0">Ingrese los siguientes datos</p><br>
                                 <p><input type="text" id="nombre" class="form-control form-control-lg" pattern="[A-Za-z ]" placeholder="Ingresa tu nombre" required /></p>
                                 <p><input type="text" id="apellidoMaterno" class="form-control form-control-lg" pattern="[A-Za-z ]" placeholder="Ingresa tu apellido paterno" required /></p>
