@@ -17,7 +17,7 @@ function myFunction() {
     icon: 'question',
     iconHtml: '?',
     
-  });
+});
 }
 </script>
 <body>
@@ -44,7 +44,8 @@ function myFunction() {
                 <div class="row d-flex justify-content-center align-items-center h-100">
 
                     <div class="col-md-5 col-lg-6 col-xl-7 offset-xl-0" style="background-color: white;" id="contenedorP">
-                        <form accion="../../Servicio/ServiceEvaluacion.php" method="POST">
+                        <form action="" method="POST">
+                        <!-- <form action="../Usuario/Evaluaciones.php" method="post"> -->
                             <center><br>
                                 <img src="../../img/LogoITO2.png" style="width: 15rem;">
                                 <br><br>
@@ -54,11 +55,21 @@ function myFunction() {
                                 <center>
                                 <H2>Examen de <b>conocimientos</b></H2>
                                 </center>
+                                
                                 <p class="text-center fw-bold  mb-0">Ingrese los siguientes datos</p><br>
-                                <p><input type="text" id="nombre" class="form-control form-control-lg" pattern="[A-Za-z ]" placeholder="Ingresa tu nombre" required /></p>
-                                <p><input type="text" id="apellidoMaterno" class="form-control form-control-lg" pattern="[A-Za-z ]" placeholder="Ingresa tu apellido paterno" required /></p>
-                                <p><input type="text" id="apellidoPaterno" class="form-control form-control-lg"  pattern="[A-Za-z ]" placeholder="Ingresa tu apellido materno" required /></p>
-                                <p><input type="text" id="Folio" class="form-control form-control-lg" placeholder="Ingresa tu folio" required /></p>
+                                <?php include "../../Controlador/ctrlLogin.php";
+                                include ("../../Config/configdb.php");
+                                ?>
+                                <p><input type="text" id="nombre" name="nombre" class="form-control form-control-lg" placeholder="Ingresa tu nombre"  /></p>
+
+                                <p><input type="text" id="apellidoPaterno" name="apellidoPaterno" class="form-control form-control-lg"  placeholder="Ingresa tu apellido paterno"  /></p>
+
+                                <p><input type="text" id="apellidoMaterno" name="apellidoMaterno" class="form-control form-control-lg" placeholder="Ingresa tu apellido materno"  /></p>
+
+                                
+
+                                <p><input type="text" id="folio" name="folio" class="form-control form-control-lg" placeholder="Ingresa tu folio"  /></p>
+
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center">                                
@@ -66,7 +77,10 @@ function myFunction() {
                             </div>
 
                             <div class="text-center text-lg-start mt-4 pt-2">
-                                <p><button type="submit" class="btn btn-primary btn-lg " style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button></p>
+                                
+                                <p><input name="btnIngresar" class="btn btn-primary btn-lg " type="submit" value="Ingresar" style="padding-left: 2.5rem; padding-right: 2.5rem;"><br></p>
+
+                                
                             </div>
                         </form>
                     </div>

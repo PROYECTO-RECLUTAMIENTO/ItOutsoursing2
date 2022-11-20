@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION["folio"])) {
+    header("location: ../Usuario/LoginEvaluacion.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,18 +20,33 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../Usuario/loginEvaluacion.php"><img src="../../img/LogoITO.png" style="width:4rem;"></a>
+      <a class="navbar-brand" href="../Usuario/Evaluaciones.php"><img src="../../img/LogoITO.png" style="width:4rem;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="../Usuario/loginEvaluacion.php">Login Evaluación</a>
           <a class="nav-link" href="../Usuario/Evaluaciones.php">Evaluaciones</a>
           <a class="nav-link" href="../Usuario/Examen.php">Examen</a>
           <a class="nav-link" href="../Admin/RankingAspirantes.php">Ranking</a>
         </div>
       </div>
+      <div id="sessionNombre">
+          <b>
+          <a class="alert alert-primary" >
+            <?php
+              echo $_SESSION["nombre"] . " " . $_SESSION["apellidoPaterno"];
+            ?>
+          </a>
+          </b>
+        </div>
+        <div id="sessionNombre">
+          <b>
+          <a class="alert alert-danger" href="../../Controlador/ctrlCerrarLogin.php">
+            Cerrar Sesión
+          </a>
+          </b>
+        </div>
     </div>
   </nav>
   <div class="container">

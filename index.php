@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION["folio"])) {
+    header("location: Vista/Usuario/LoginEvaluacion.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
