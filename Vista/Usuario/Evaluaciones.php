@@ -67,7 +67,6 @@ if (empty($_SESSION["folio"])) {
           </b>
         </div>
     </div>
-    
   </nav>
   
   <main>
