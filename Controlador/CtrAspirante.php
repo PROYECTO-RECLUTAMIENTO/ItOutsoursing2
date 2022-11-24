@@ -5,7 +5,7 @@ class CtrAspirante{
 
         $objeto = new Conexion("%","utn7xtvd_evaluaciones","k5JZgIbmy!cN","utn7xtvd_itoutsoursing");
       
-            
+            echo 'Hola mundo';
         $objeto->conectarBD();
             
         $sql="SELECT * FROM fechas_examen"; 	                
