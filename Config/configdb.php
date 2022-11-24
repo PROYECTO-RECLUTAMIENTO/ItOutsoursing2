@@ -1,8 +1,8 @@
 <?php
-   $dbhost = "sql9.freemysqlhosting.net";
-   $usuario = "sql9574012";
-   $password = "HDHmBbJhbI";
-   $dbname = "sql9574012";
+   $dbhost = "%";
+   $usuario = "utn7xtvd_evaluaciones";
+   $password = "k5JZgIbmy!cN";
+   $dbname = "utn7xtvd_itoutsoursing";
    $conexion = new mysqli($dbhost, $usuario, $password, $dbname);
    $conexion-> set_charset("utf8");
 
