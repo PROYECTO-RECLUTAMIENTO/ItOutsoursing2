@@ -5,10 +5,11 @@ class CtrAspirante{
 
         $objeto = new Conexion("%","utn7xtvd_evaluaciones","k5JZgIbmy!cN","utn7xtvd_itoutsoursing");
       
-            echo 'Hola mundo';
+           
         $objeto->conectarBD();
             
-        $sql="SELECT * FROM fecha_examenes"; 	                
+        $sql="SELECT * FROM fecha_examenes";
+        echo 'Hola mundo';
         $resultado = $objeto->ejecutarQuery($sql);
         
         while ($reg=mysqli_fetch_array($resultado)){
