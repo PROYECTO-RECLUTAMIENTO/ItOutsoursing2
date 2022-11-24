@@ -8,7 +8,7 @@ class CtrAspirante{
             echo 'Hola mundo';
         $objeto->conectarBD();
             
-        $sql="SELECT * FROM fechas_examen"; 	                
+        $sql="SELECT * FROM fecha_examenes"; 	                
         $resultado = $objeto->ejecutarQuery($sql);
         
         while ($reg=mysqli_fetch_array($resultado)){
