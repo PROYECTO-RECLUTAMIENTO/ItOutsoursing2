@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,56 +35,14 @@
         <div class="info">
 			<h1>Examen de Conocimiento</h1>
 		</div>
-       
-            <!--inicio botones flotantes-->
-        <a class="btn-flotante-tiempo">Tiempo:<div id="countdown"></div></a>  
-        
-        <a onclick="miFunción()" class="btn-flotante-Finalizar">Finalizar</a> 
-        <script>
-            función miFunción() {
-                tragar _ fuego ({
-                    title : ' Comunicate con soporte para solución a tu problema ' ,
-                    icono : ' pregunta ' ,
-                    iconoHtml : ' ? ' ,
-                });
-            }
 
-        </script>
-        <!--Fin botones flotantes-->
       
            <?php
-           $conn = mysqli_connect("sql9.freemysqlhosting.net","sql9574012","HDHmBbJhbI","sql9574012");
-            $sql="SELECT *
-                FROM preguntas 
-                ORDER BY RAND() 
-                LIMIT 20 ";
-            $resultado = mysqli_query($conn,$sql);
-            //Contador de preguntas
-            $i =1; $res =0;
-            while ($reg=mysqli_fetch_array($resultado)){
-                echo'
-                <div class="radio">
-                    <h2>'.$i++.'.- '.$reg['pregunta'].'</h2>';
-                    
-                    $id_pregunta1 = $reg['id_pregunta'];
-
-                    $sql2="SELECT *
-                    FROM respuestas 
-                    where id_pregunta = '$id_pregunta1'";
-
-                $resultado2 = mysqli_query($conn,$sql2);
-    
-                while ($reg2=mysqli_fetch_array($resultado2)){
-                    echo'
-                        
-                        <input type="radio" name="'.$id_pregunta1.'" id="res'.$res.'">
-                        <label for="res'.$res.'">'.$reg2['respuesta'].'</label><br>';
-                        $res++;     
-                }   
-                echo'</div>';
-                     
-            }
            
+           require '../../Controlador/CtrAspirante.php';
+                    $aspirante = new CtrAspirante;
+
+                    $aspirante ->listarPreguntas();
             ?> 
             
     </div>
