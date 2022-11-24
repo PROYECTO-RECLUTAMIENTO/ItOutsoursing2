@@ -3,7 +3,7 @@ include 'Config/conexion.php';
 class CtrAspirante{
     function fechasExamenes(){
 
-        $objeto = new Conexion("%","utn7xtvd_evaluaciones","k5JZgIbmy!cN","utn7xtvd_itoutsoursing");
+        $objeto = new Conexion("%","utn7xtvd_evaluaciones","k5JZgIbmy!cN","utn7xtvd_itoutsoursi");
       
             echo 'Hola mundo';
         $objeto->conectarBD();
