@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="../../css/evaluaciones.css">
     <title>IT O | Evaluaciones </title>
 </head>
+<script>
+function boton1() {
+  <?php
+    include ('../../Controlador/ValidacionBtn.php');
+      echo accionbtn1();
+  ?>
+}
+
+function boton2() {
+  <?php
+      echo accionbtn2();
+  ?>
+}
+</script>
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
@@ -29,36 +43,31 @@
     </nav>
     <main>
     <br><br><br>
-        <section class="vh-100" >
           <h1 >Evaluaciones</h1>          
           <div id="exam">
             <div id="exam1">
               <div id="icono">
-                  <img src="../../img/conocimiento.png" style="max-width:100%;width:auto;height:auto;max-height:80%;align:middle;">
+                  <img src="../../img/conocimiento.png">
               </div>
                  <p>Conocimiento</p>
               <div id="txtExam">
-                <p>Evaluacion sin realizar.</p>
-              </div>
-              <div id="btnExam">
-                <p><a href="Examen.php">Realizar</a></p>
-              </div>
+                <?php
+                echo texto1();
+              ?>
             </div>
 
             <div id="exam2">
               <div id="icono">
-                  <img src="../../img/psicometrico.png" style="max-width:100%;width:auto;height:auto;max-height:80%;align:middle;">
+                  <img src="../../img/psicometrico.png">
               </div>
                  <p>Psicometrico</p>
               <div id="txtExam2">
-                <p>Realizar primero el examen de conocimiento.</p>
-              </div>
-              <div id="btnExam2">
-                <p><a href="Evaluaciones.php">No disponible</a></p>
-             </div>
+              <?php
+                echo texto2();
+                ?>
+
 
            </div>    
-        </section>
     </main>
     <!-- Footer -->
 <footer class="bg-dark text-center text-white">
@@ -86,4 +95,5 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>
