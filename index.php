@@ -69,6 +69,7 @@
                         </tr>
                     </thead>
                 <?php                
+                
                     $aspirante = new CtrAspirante;
                     $aspirante ->resultadosExamenes();
                 ?>
