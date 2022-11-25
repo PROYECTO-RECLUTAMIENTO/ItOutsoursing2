@@ -30,15 +30,13 @@
     <br><br><br>
         <section class="vh-100" style=" padding: 5% 10%;"  >
             
-            <h1 style="color: white; ">Datos de prueba</h1>
+            <h1 style="color: white; ">Fechas de examen</h1>
             <div style="background-color: white; padding: 20px;">
 
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
                             <th >Id Aspirante</th>
-                            <th>Id fecha Examen</th>
-                            <th>Id Examen</th>
                             <th>Fecha</th>
                             <th>Hora Inicio</th>
                             <th>Hora Fin</th>
@@ -56,7 +54,28 @@
                 
                 </table>
             </div>
+                <br><br><br>
 
+                <h1 style="color: white; ">Resultados Examenes</h1>
+            <div style="background-color: white; padding: 20px;">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Id Aspirante</th>
+                            <th>Id Examen</th>
+                            <th>aciertos</th>
+                            <th>Estatus</th>
+                            <th>Fecha y hora</th>
+                        </tr>
+                    </thead>
+                <?php                
+                    $aspirante = new CtrAspirante;
+                    $aspirante ->resultadosExamenes();
+                ?>
+
+                </table>
+            </div>
+            <br><br><br>
             
         </section>
     </main>
@@ -81,5 +100,3 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </html>
-Footer
-© 2022 GitHub, Inc.
