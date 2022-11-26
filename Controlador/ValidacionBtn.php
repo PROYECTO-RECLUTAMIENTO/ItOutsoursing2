@@ -1,11 +1,13 @@
 <?php
 include '../../Config/conexion.php';
 
+$folio = $_SESSION["folio"];
+
 $objeto = new Conexion("sql9.freemysqlhosting.net","sql9574012","HDHmBbJhbI","sql9574012");
             
 $objeto->conectarBD();
     
-$sql="SELECT F.estatus FROM examenes E,fechas_examen F WHERE F.id_aspirante = '3658' AND E.id_examen = F.id_examen AND E.id_tipo = '1'"; 	                
+$sql="SELECT F.estatus FROM examenes E,fechas_examen F WHERE F.id_aspirante = $folio AND E.id_examen = F.id_examen AND E.id_tipo = '1'"; 	                
 $resultado = $objeto->ejecutarQuery($sql);
 
 $resultado=mysqli_fetch_array($resultado);
@@ -78,7 +80,6 @@ function accionbtn2(){
     }  
 return $accion2;
 }
-
 
 
 ?>
