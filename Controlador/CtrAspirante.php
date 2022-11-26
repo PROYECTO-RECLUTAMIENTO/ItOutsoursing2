@@ -1,4 +1,3 @@
-
 <?php
 //include 'Config/conexion.php';
 
@@ -142,7 +141,7 @@ class CtrAspirante{
         <!--
         <a  type="Submit" value="Finalizar" onclick="alertaFinalizar()" class="btn-flotante-Finalizar">Finalizar</a> 
         -->
-        <button  type="Submit" value="Finalizar" " class="btn-flotante-Finalizar">Finalizar</button> 
+        <button  type="Submit" value="Finalizar" class="btn-flotante-Finalizar">Finalizar</button> 
        
         <!--Fin botones flotantes-->'; 
     }
