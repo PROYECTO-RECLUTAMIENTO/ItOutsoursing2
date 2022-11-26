@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (empty($_SESSION["folio"])) {
-    header("location: LoginEvaluacion.php");
-}
+// session_start();
+// if (empty($_SESSION["folio"])) {
+//     header("location: LoginEvaluacion.php");
+// }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,7 +18,6 @@ if (empty($_SESSION["folio"])) {
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
-
     <div class="container-fluid">
         <a class="navbar-brand" href="Evaluaciones.php"><img src="../../img/LogoITO.png" style="width:4rem;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,32 +30,30 @@ if (empty($_SESSION["folio"])) {
             <a class="nav-link" href="../Admin/RankingAspirantes.php">Ranking</a>
         </div>
         </div>
-
-        <div id="sessionNombre">
-          <b>
-          <a class="alert alert-primary">
-            <?php
-              echo $_SESSION["nombre"] . " " . $_SESSION["apellidoPaterno"];
-            ?>
-          </a>
-          </b>
+            <div id="sessionNombre">
+                <b>
+                    <a class="alert alert-primary">
+                        <?php
+                        echo $_SESSION["nombre"] . " " . $_SESSION["apellidoPaterno"];
+                        ?>
+                    </a>
+                </b>
+            </div>
+            <div id="sessionNombre">
+                <b>
+                    <a class="alert alert-danger" href="../../Controlador/ctrlCerrarLogin.php">
+                        Cerrar Sesión
+                    </a>
+                </b>
+            </div>
         </div>
-        <div id="sessionNombre">
-          <b>
-          <a class="alert alert-danger" href="../../Controlador/ctrlCerrarLogin.php">
-            Cerrar Sesión
-          </a>
-          </b>
-        </div>
-    </div>
     </nav>
     <div class="wrap" ><br><br>
       <form class="formulario" action="" style="background-color:white; border-radius:5px ; box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.367);" >
           <div class="info">
             <h1>Examen de Conocimiento</h1>
           </div>
-                <?php
-                
+                <?php                
                 require '../../Controlador/CtrAspirante.php';
                           $aspirante = new CtrAspirante;
                           $idAspirante = 3659;
@@ -66,28 +63,26 @@ if (empty($_SESSION["folio"])) {
     </div>
     <br><br><br>
     <!-- Footer -->
-<footer class="bg-dark text-center text-white">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-        Recuerda que el modulo de evaluaciones debe contestarse de manera honesta, cualquier indicio de trampa sera motivo de cancelación
-      </p>
-    </section>
-    <!-- Section: Text -->
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    Recuerda que el modulo de evaluaciones debe contestarse de manera honesta, cualquier indicio de trampa sera motivo de cancelación
+                </p>
+            </section>
+            <!-- Section: Text -->
+        </div>
+        <!-- Grid container -->
 
-
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    IT Outsoursing© 2022 Copyright
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            IT Outsoursing© 2022 Copyright
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 </body>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
