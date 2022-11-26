@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (empty($_SESSION["folio"])) {
-    header("location: LoginEvaluacion.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,54 +8,54 @@ if (empty($_SESSION["folio"])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/examen.css">
     <link rel="stylesheet" href="../../css/styleEvs.css">
-    <title>IT O | Examen </title>
+    <title>IT O | Inicio </title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
-
-    <div class="container-fluid">
-        <a class="navbar-brand" href="Evaluaciones.php"><img src="../../img/LogoITO.png" style="width:4rem;"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-link" href="Evaluaciones.php">Evaluaciones</a>
-            <a class="nav-link" href="Examen.php">Examen</a>
-            <a class="nav-link" href="../Admin/RankingAspirantes.php">Ranking</a>
-        </div>
-        </div>
-
-        <div id="sessionNombre">
-          <b>
-          <a class="alert alert-primary">
-            <?php
-              echo $_SESSION["nombre"] . " " . $_SESSION["apellidoPaterno"];
-            ?>
-          </a>
-          </b>
-        </div>
-        <div id="sessionNombre">
-          <b>
-          <a class="alert alert-danger" href="../../Controlador/ctrlCerrarLogin.php">
-            Cerrar Sesión
-          </a>
-          </b>
-        </div>
-    </div>
+      <div class="container-fluid">
+          <a class="navbar-brand" href="../../index.php"><img src="../../img/LogoITO.png" style="width:4rem;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="LoginEvaluacion.php">Login Evaluación</a>
+                <a class="nav-link" href="Evaluaciones.php">Evaluaciones</a>
+                <a class="nav-link" href="Examen.php">Examen</a>
+                <a class="nav-link" href="../Admin/RankingAspirantes.php">Ranking</a>
+            </div>
+          </div>
+      </div>
     </nav>
     <div class="wrap" ><br><br>
-      <form class="formulario" action="" style="background-color:white; border-radius:5px ; box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.367);" >
+      <form class="formulario" action="../../Controlador/Evaluar.php" method="Post" style="background-color:white; border-radius:5px ; box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.367);" >
           <div class="info">
             <h1>Examen de Conocimiento</h1>
           </div>
-                <?php
-                
+          <?php
+            if(isset($_POST['iniciar'],$_POST['terminos'])){
+                //variables locales
+                $inciar = $_POST['iniciar'];
+                $terminos = $_POST['terminos'];
+
                 require '../../Controlador/CtrAspirante.php';
-                          $aspirante = new CtrAspirante;
-                          $idAspirante = 3659;
-                          $aspirante ->DisponibilidadExamen($idAspirante);
-                ?> 
+                $aspirante = new CtrAspirante;
+                $aspirante->listarPreguntas();
+                /*
+                $horainicio = $reg[4];    
+                $horafin = $reg[5] ;      
+                */         
+                $reloj = new CtrAspirante;
+                $reloj-> activarReloj($horainicio, $horafin);
+                
+            }else{
+            
+            echo '<script language="javascript">
+                    alert("No has aceptado los terminos :(");
+                window.history.go(-1)
+                    </script>';            
+            }
+            ?>
       </form>
     </div>
     <br><br><br>

@@ -1,4 +1,4 @@
-var end = new Date('11/16/2022 1:30 PM ');
+var end = new Date('11/24/2022 11:30 PM ');
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -32,11 +32,12 @@ var end = new Date('11/16/2022 1:30 PM ');
 
     //Alerta finalizar examen 
 
-    function alertaFinalizar() {
+    function alertaFinalizar(){
         Swal.fire({
-        title: 'Comunicate con soporte para solución a tu problema',
-        icon: 'question',
-        iconHtml: '?',
+        title: 'Estas apunto de terminar tu examen <br> ¿Estas seguro que desas continuar?',
+        icon: 'error',
+        iconHtml: 'X',
     
       });
     }
+
