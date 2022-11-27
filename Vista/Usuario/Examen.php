@@ -1,8 +1,8 @@
 <?php
-// session_start();
-// if (empty($_SESSION["folio"])) {
-//     header("location: LoginEvaluacion.php");
-// }
+session_start();
+if (empty($_SESSION["folio"])) {
+    header("location: LoginEvaluacion.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">

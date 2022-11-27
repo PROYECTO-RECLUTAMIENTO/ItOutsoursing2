@@ -29,7 +29,7 @@ function myFunction() {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="LoginEvaluacion.php">Login Evaluación</a>
+                    <!-- <a class="nav-link active" aria-current="page" href="LoginEvaluacion.php">Login Evaluación</a> -->
                     <a class="nav-link" href="Evaluaciones.php">Evaluaciones</a>
                     <a class="nav-link" href="Examen.php">Examen</a>
                     <a class="nav-link" href="../Admin/RankingAspirantes.php">Ranking</a>
@@ -60,15 +60,13 @@ function myFunction() {
                                 <?php include "../../Controlador/ctrlLogin.php";
                                 include ("../../Config/configdb.php");
                                 ?>
-                                <p><input type="text" id="nombre" name="nombre" class="form-control form-control-lg" placeholder="Ingresa tu nombre"  /></p>
+                                <p><input type="text" id="nombre" name="nombre" class="form-control form-control-lg" placeholder="Ingresa tu nombre" required  /></p>
 
-                                <p><input type="text" id="apellidoPaterno" name="apellidoPaterno" class="form-control form-control-lg"  placeholder="Ingresa tu apellido paterno"  /></p>
+                                <p><input type="text" id="apellidoPaterno" name="apellidoPaterno" class="form-control form-control-lg"  placeholder="Ingresa tu apellido paterno"  required /></p>
 
-                                <p><input type="text" id="apellidoMaterno" name="apellidoMaterno" class="form-control form-control-lg" placeholder="Ingresa tu apellido materno"  /></p>
+                                <p><input type="text" id="apellidoMaterno" name="apellidoMaterno" class="form-control form-control-lg" placeholder="Ingresa tu apellido materno"  required /></p>
 
-                                
-
-                                <p><input type="text" id="folio" name="folio" class="form-control form-control-lg" placeholder="Ingresa tu folio"  /></p>
+                                <p><input type="text" id="folio" name="folio" class="form-control form-control-lg" placeholder="Ingresa tu folio" required /></p>
 
                             </div>
 
