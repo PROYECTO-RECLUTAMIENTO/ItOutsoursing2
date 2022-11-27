@@ -1,3 +1,4 @@
+
 <?php
 //include 'Config/conexion.php';
 
@@ -31,8 +32,13 @@ class CtrAspirante{
         $sql="SELECT * FROM fechas_examen
                 where id_aspirante = '$idAspirante'"; 	                
         $resultado = mysqli_query($conn,$sql);
+
+        $sql2="SELECT * FROM usuarios
+                where id = '$idAspirante'"; 	                
+        $resultado2 = mysqli_query($conn,$sql);
+
         
-        while ($reg=mysqli_fetch_array($resultado)){
+        while ($reg=mysqli_fetch_array($resultado) ){
             if ($reg[6] == 1){
                 $horainicio=$reg[4];
                 $horafin =$reg[5];  
@@ -59,7 +65,7 @@ class CtrAspirante{
                             Datos de participante:                    
                             </h5>
                             <h6>
-                            Nombre: '.'$Datos de la sesion'.'
+                            
                             <br>                            
                             Folio:'.$reg[0].'                                
                             <br>

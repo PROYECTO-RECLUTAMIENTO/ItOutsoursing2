@@ -41,12 +41,12 @@
                 require '../../Controlador/CtrAspirante.php';
                 $aspirante = new CtrAspirante;
                 $aspirante->listarPreguntas();
-                /*
-                $horainicio = $reg[4];    
-                $horafin = $reg[5] ;      
-                */         
+                
+                // $horainicio = $reg[4];    
+                // $horafin = $reg[5] ;      
+                         
                 $reloj = new CtrAspirante;
-                $reloj-> activarReloj($horainicio, $horafin);
+                // $reloj-> activarReloj($horainicio, $horafin);
                 
             }else{
             

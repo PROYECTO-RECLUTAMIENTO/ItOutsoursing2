@@ -56,7 +56,8 @@ if (empty($_SESSION["folio"])) {
                 <?php                
                 require '../../Controlador/CtrAspirante.php';
                           $aspirante = new CtrAspirante;
-                          $idAspirante = 3659;
+                        //   $idAspirante = 3659
+                          $idAspirante = $_SESSION["folio"];
                           $aspirante ->DisponibilidadExamen($idAspirante);
                 ?> 
       </form>
