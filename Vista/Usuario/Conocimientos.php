@@ -1,3 +1,6 @@
+<?php
+// include '../../Controlador/CtrAspirante.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,11 +45,12 @@
                 $aspirante = new CtrAspirante;
                 $aspirante->listarPreguntas();
                 
-                // $horainicio = $reg[4];    
-                // $horafin = $reg[5] ;      
+                $horainicio = $reg[4];    
+                $horafin = $reg[5] ;      
                          
                 $reloj = new CtrAspirante;
-                // $reloj-> activarReloj($horainicio, $horafin);
+                $reloj-> activarReloj($horainicio, $horafin);
+                // $reloj-> activarReloj();
                 
             }else{
             

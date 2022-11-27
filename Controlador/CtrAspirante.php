@@ -33,9 +33,6 @@ class CtrAspirante{
                 where id_aspirante = '$idAspirante'"; 	                
         $resultado = mysqli_query($conn,$sql);
 
-        $sql2="SELECT * FROM usuarios
-                where id = '$idAspirante'"; 	                
-        $resultado2 = mysqli_query($conn,$sql);
 
         
         while ($reg=mysqli_fetch_array($resultado) ){
@@ -151,6 +148,45 @@ class CtrAspirante{
        
         <!--Fin botones flotantes-->'; 
     }
+
+
+    // function activarReloj($horainicio, $horafin, $idAspirante){
+    //     $conn = mysqli_connect("utnestudiante0325.utn.red","utn7xtvd","k3n!Wt6thc4*Cq8s","utn7xtvd_itoutsoursing");
+                
+    //     $sql="SELECT * FROM fechas_examen
+    //             where id_aspirante = '$idAspirante'"; 	                
+    //     $resultado = mysqli_query($conn,$sql);
+
+
+        
+    //     while ($reg=mysqli_fetch_array($resultado) ){
+    //         if ($reg[6] == 1){
+    //             $horainicio=$reg[4];
+    //             $horafin =$reg[5];  
+    //             $aspirante = new CtrAspirante;
+    //             echo'hora inicio: '.$horainicio. 'Hora fin: '.$horafin;
+
+    //     echo '   
+    //     <!--inicio botones flotantes-->
+    //     <a class="btn-flotante-tiempo">Tiempo:<div id="countdown"></div></a>  
+        
+    //     <!--
+    //     <a  type="Submit" value="Finalizar" onclick="alertaFinalizar()" class="btn-flotante-Finalizar">Finalizar</a> 
+    //     -->
+    //     <button  type="Submit" value="Finalizar" class="btn-flotante-Finalizar">Finalizar</button> 
+       
+    //     <!--Fin botones flotantes-->'; 
+                
+                
+    //         }else{
+    //             echo '<script language="javascript">
+    //             alert("Aún no tienes habilitado el examen");
+    //             window.history.go(-1)</script>';
+    //         }
+    //         return;
+    //     }
+
+    // }
 
 
     function resultadosExamenes(){
