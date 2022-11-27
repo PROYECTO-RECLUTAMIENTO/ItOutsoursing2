@@ -3,8 +3,8 @@ include '../../Config/conexion.php';
 
 $folio = $_SESSION["folio"];
 
-$objeto = new Conexion("sql9.freemysqlhosting.net","sql9574012","HDHmBbJhbI","sql9574012");
-            
+$objeto = new Conexion("utnestudiante0325.utn.red","utn7xtvd","k3n!Wt6thc4*Cq8s","utn7xtvd_itoutsoursing");
+                     
 $objeto->conectarBD();
     
 $sql="SELECT F.estatus FROM examenes E,fechas_examen F WHERE F.id_aspirante = $folio AND E.id_examen = F.id_examen AND E.id_tipo = '1'"; 	                

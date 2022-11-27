@@ -55,34 +55,34 @@ if (empty($_SESSION["folio"])) {
     <main>
     <br><br><br>
         <section class="vh-100" >
-          <h1 >Evaluaciones</h1>          
+          <h1>Evaluaciones</h1>          
           <div id="exam">
             <div id="exam1">
               <div id="icono">
-                  <img src="../../img/conocimiento.png" style="max-width:100%;width:auto;height:auto;max-height:80%;align:middle;">
+                  <img src="../../img/conocimiento.png" style="max-width:45%;width:auto;height:auto;max-height:80%;align:middle;">
               </div>
                  <p>Conocimiento</p>
               <div id="txtExam">
                 <p>Evaluacion sin realizar.</p>
               </div>
               <div id="btnExam">
-                <p><a href="Examen.php">Realizar</a></p>
+                <p><a href="Examen.php" class="btn btn-success">Realizar</a></p>
               </div>
             </div>
 
             <div id="exam2">
               <div id="icono">
-                  <img src="../../img/psicometrico.png" style="max-width:100%;width:auto;height:auto;max-height:80%;align:middle;">
+                  <img src="../../img/psicometrico.png" style="max-width:45%;width:auto;height:auto;max-height:80%;align:middle;">
               </div>
                  <p>Psicometrico</p>
               <div id="txtExam2">
                 <p>Realizar primero el examen de conocimiento.</p>
               </div>
-              <div id="btnExam2">
-                <p><a href="Evaluaciones.php">No disponible</a></p>
+              <div id="btnExam2" >
+                <p><a class="btn btn-warning" href="Evaluaciones.php">No disponible</a></p>
              </div>
 
-           </div>    
+           </div>
         </section>
     </main>
     <!-- Footer -->

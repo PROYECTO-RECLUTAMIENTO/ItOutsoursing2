@@ -32,18 +32,11 @@ if (empty($_SESSION["folio"])) {
         </div>
             <div id="sessionNombre">
                 <b>
-                    <a class="alert alert-primary">
+                    <p class="alert alert-primary">
                         <?php
                         echo $_SESSION["nombre"] . " " . $_SESSION["apellidoPaterno"];
                         ?>
-                    </a>
-                </b>
-            </div>
-            <div id="sessionNombre">
-                <b>
-                    <a class="alert alert-danger" href="../../Controlador/ctrlCerrarLogin.php">
-                        Cerrar Sesión
-                    </a>
+                    </p>
                 </b>
             </div>
         </div>

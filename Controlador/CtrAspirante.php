@@ -135,7 +135,7 @@ class CtrAspirante{
 
     function activarReloj($horainicio, $horafin){
 
-    echo'hora inicio: '.$horainicio. 'Hora fin: '.$horafin;
+    //echo'hora inicio: '.$horainicio. 'Hora fin: '.$horafin;
 
         echo '   
         <!--inicio botones flotantes-->
