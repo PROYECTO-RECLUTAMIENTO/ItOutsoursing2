@@ -17,6 +17,21 @@ if (empty($_SESSION["folio"])) {
     <link rel="stylesheet" href="../../css/evaluaciones.css">
     <title>IT O | Evaluaciones </title>
 </head>
+<script>
+  function boton1() {
+    <?php
+    include('../../Controlador/ValidacionBtn.php');
+    echo accionbtn1();
+    ?>
+  }
+
+  function boton2() {
+    <?php
+    echo accionbtn2();
+    ?>
+  }
+</script>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
@@ -63,24 +78,21 @@ if (empty($_SESSION["folio"])) {
               </div>
                  <p>Conocimiento</p>
               <div id="txtExam">
-                <p>Evaluacion sin realizar.</p>
-              </div>
-              <div id="btnExam">
-                <p><a href="Examen.php" class="btn btn-success">Realizar</a></p>
-              </div>
+
+                <?php
+                  echo texto1();
+                ?>
             </div>
 
             <div id="exam2">
               <div id="icono">
                   <img src="../../img/psicometrico.png" style="max-width:45%;width:auto;height:auto;max-height:80%;align:middle;">
               </div>
-                 <p>Psicometrico</p>
+                 <p>Psicométrico</p>
               <div id="txtExam2">
-                <p>Realizar primero el examen de conocimiento.</p>
-              </div>
-              <div id="btnExam2" >
-                <p><a class="btn btn-warning" href="Evaluaciones.php">No disponible</a></p>
-             </div>
+                <?php
+                  echo texto2();
+                  ?>
 
            </div>
         </section>
@@ -97,6 +109,8 @@ if (empty($_SESSION["folio"])) {
     </section>
     <!-- Section: Text -->
 
+  </div>
+  <!-- Grid container -->
 
   </div>
   <!-- Grid container -->
@@ -113,5 +127,3 @@ if (empty($_SESSION["folio"])) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>
-
-
