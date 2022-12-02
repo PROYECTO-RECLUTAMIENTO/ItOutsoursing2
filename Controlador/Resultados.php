@@ -48,7 +48,10 @@ if (empty($_SESSION["folio"])) {
     <div class="wrap" ><br><br>
 
     <?php
-        
+        echo '<script language="javascript">
+                alert("Estas apunto de terminar tu examen");
+                
+            </script>'; 
         if(isset($_POST['Finalizar'])){
 
             //require 'CtrAspirante.php';
@@ -63,7 +66,7 @@ if (empty($_SESSION["folio"])) {
                 </div>
                 <div>
                     <center>
-                    <a href="../vista/Usuario/Evaluaciones.php"><img style="width:100%;" src="../img/Gracias.png"></a>
+                    <a href="../Vista/Usuario/Evaluaciones.php"><img style="width:100%;" src="../img/Gracias.png"></a>
                     </center>
                 </div>
             </form>               
