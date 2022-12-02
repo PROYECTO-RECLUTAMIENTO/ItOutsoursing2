@@ -2,6 +2,7 @@
 <?php
 //include 'Config/conexion.php';
 
+
 class CtrAspirante{
     function fechasExamenes(){
 
@@ -57,21 +58,7 @@ class CtrAspirante{
                                 <br>                            
                                 - Si se te sorprende realizando algun tipo de trampa se cancelara tu proceso de selección                                
                             </h5>
-                            <form method="POST" action="Conocimientos.php">
-                            <h5>
-                            Datos de participante:                    
-                            </h5>
-                            <h6>
-                            
-                            <br>                            
-                            Folio:'.$reg[0].'                                
-                            <br>
-                            Hora de inicio: 
-                            <label name="hrInicio" value='.$reg[4].'>'.$reg[4].'</label> 
-                            <br>
-                            Hora de fin: 
-                            <label  id="hrFin" name="hrFin" value="hrfin">'.$reg[5].' </label>                   
-                            </h6>                            
+                            <form method="POST" action="Conocimientos.php">                                              
                         <br>                        
                         <center>
                             <input type="checkbox" id="terminos" name="terminos" value="terminos">
@@ -94,6 +81,46 @@ class CtrAspirante{
             return;
         }
 
+    }
+
+    function cambiarestatus($idAspirante){
+
+        echo'id aspirante: '.$idAspirante ;
+        include_once '../Modelo/fechasexam.php';
+        //sentencia sql
+        $sql = "SELECT * FROM fechas_examen where id_aspirante = '$idAspirante'";
+        //imprimir la sentencia sql
+           
+        //crear instancia de la clase conexion
+        $conn = mysqli_connect("utnestudiante0325.utn.red","utn7xtvd","k3n!Wt6thc4*Cq8s","utn7xtvd_itoutsoursing");
+                     
+        //establecer conexion a la bd
+        
+        $resultado = mysqli_query($conn,$sql);
+        
+        //ejecutar sentencia sql
+        
+        if(mysqli_num_rows($resultado) > 0){
+            //definiendo un array
+            $arreglo = array();
+            //obtener el registro de todos los campos
+            $arreglo = mysqli_fetch_array($resultado);
+            //crear objeto tipo usuario
+            $usuario = new fechasExam();
+            //formar objeto
+            
+            $usuario->setEstatus($arreglo[6]);
+            
+            
+            
+            //Cerrar conexion
+            //Regreso de objeto
+            return $usuario;
+        }else{
+            //cerrar conexion a la bd
+            return null;
+
+        }
     }
 
     function listarPreguntas(){
@@ -122,7 +149,7 @@ class CtrAspirante{
                 while ($reg2=mysqli_fetch_array($resultado2)){
                     echo'
                         
-                        <input type="radio" name="'.$id_pregunta1.'" id="res'.$res.'">
+                        <input type="radio" name="'.$id_pregunta1.'" id="res'.$res.'" value="'.$reg2['correcta'].'">
                         <label for="res'.$res.'">'.$reg2['respuesta'].'</label><br>';
                         $res++;     
                     }   
@@ -133,61 +160,24 @@ class CtrAspirante{
             mysqli_close($conn);
     }
 
-    function activarReloj($horainicio, $horafin){
-
-    //echo'hora inicio: '.$horainicio. 'Hora fin: '.$horafin;
-
+    function activarReloj(){
+  
         echo '   
         <!--inicio botones flotantes-->
-        <a class="btn-flotante-tiempo">Tiempo:<div id="countdown"></div></a>  
+        <a class="btn-flotante-tiempo">
+            Tiempo:
+            <span id="horas"></span>
+            <span id="minutos"></span>
+            <span id="segundos"></span>
+        </a>  
         
         <!--
         <a  type="Submit" value="Finalizar" onclick="alertaFinalizar()" class="btn-flotante-Finalizar">Finalizar</a> 
         -->
-        <button  type="Submit" value="Finalizar" class="btn-flotante-Finalizar">Finalizar</button> 
+        <input type="Submit" name="Finalizar" id="Finalizar"  value="Finalizar" class="btn-flotante-Finalizar">Finalizar</input> 
        
         <!--Fin botones flotantes-->'; 
     }
-
-
-    // function activarReloj($horainicio, $horafin, $idAspirante){
-    //     $conn = mysqli_connect("utnestudiante0325.utn.red","utn7xtvd","k3n!Wt6thc4*Cq8s","utn7xtvd_itoutsoursing");
-                
-    //     $sql="SELECT * FROM fechas_examen
-    //             where id_aspirante = '$idAspirante'"; 	                
-    //     $resultado = mysqli_query($conn,$sql);
-
-
-        
-    //     while ($reg=mysqli_fetch_array($resultado) ){
-    //         if ($reg[6] == 1){
-    //             $horainicio=$reg[4];
-    //             $horafin =$reg[5];  
-    //             $aspirante = new CtrAspirante;
-    //             echo'hora inicio: '.$horainicio. 'Hora fin: '.$horafin;
-
-    //     echo '   
-    //     <!--inicio botones flotantes-->
-    //     <a class="btn-flotante-tiempo">Tiempo:<div id="countdown"></div></a>  
-        
-    //     <!--
-    //     <a  type="Submit" value="Finalizar" onclick="alertaFinalizar()" class="btn-flotante-Finalizar">Finalizar</a> 
-    //     -->
-    //     <button  type="Submit" value="Finalizar" class="btn-flotante-Finalizar">Finalizar</button> 
-       
-    //     <!--Fin botones flotantes-->'; 
-                
-                
-    //         }else{
-    //             echo '<script language="javascript">
-    //             alert("Aún no tienes habilitado el examen");
-    //             window.history.go(-1)</script>';
-    //         }
-    //         return;
-    //     }
-
-    // }
-
 
     function resultadosExamenes(){
 

@@ -53,7 +53,7 @@ function myFunction() {
                             <!-- Email input -->
                             <div class="form-outline mb-4">
                                 <center>
-                                <H2>Examen de <b>conocimientos</b></H2>
+                                <H2> Evaluaciones</H2>
                                 </center>
                                 
                                 <p class="text-center fw-bold  mb-0">Ingrese los siguientes datos</p><br>
