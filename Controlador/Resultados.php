@@ -63,7 +63,7 @@ if (empty($_SESSION["folio"])) {
                 </div>
                 <div>
                     <center>
-                    <a href="../vista/Usuario/evaluaciones.php"><img style="width:100%;" src="../img/Gracias.png"></a>
+                    <a href="../vista/Usuario/Evaluaciones.php"><img style="width:100%;" src="../img/Gracias.png"></a>
                     </center>
                 </div>
             </form>               
