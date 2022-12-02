@@ -52,7 +52,7 @@ if (empty($_SESSION["folio"])) {
         if(isset($_POST['Finalizar'])){
 
             //require 'CtrAspirante.php';
-            $idAspirante = $_SESSION["folio"];
+            //$idAspirante = $_SESSION["folio"];
             //$resultados = new CtrAspirante;
             //$resultados ->cambiarestatus($idAspirante);
 
