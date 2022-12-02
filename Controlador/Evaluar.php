@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_POST['iniciar'],$_POST['terminos'])){
 
 }else{
