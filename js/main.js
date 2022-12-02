@@ -1,43 +1,73 @@
-var end = new Date('11/24/2022 11:30 PM ');
+let horas = 0;
+let minutos = 45;
+let segundos = 0;
+cargarSegundo();
 
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
-    var timer;
+//Definimos y ejecutamos los segundos
+function cargarSegundo(){
+    let txtSegundos;
 
-    function showRemaining() {
-        var now = new Date();
-        var distance = end - now;
-        if (distance < 0) {
+    if(segundos < 0){
+        segundos = 59; 
+    }
+    //Mostrar Segundos en pantalla
+    if(segundos < 10){
+        txtSegundos = `0${segundos}`;
+    }else{
+        txtSegundos = segundos;
+    }
+    document.getElementById('segundos').innerHTML = txtSegundos;
+    segundos--;
 
-            clearInterval(timer);
-            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+    cargarMinutos(segundos);
+}
 
-            return;
-        }
-        var days = Math.floor(distance / _day);
-        var hours = Math.floor((distance % _day) / _hour);
-        var minutes = Math.floor((distance % _hour) / _minute);
-        var seconds = Math.floor((distance % _minute) / _second);
+//Definimos y ejecutamos los minutos
+function cargarMinutos(segundos){
+    let txtMinutos;
 
-        //document.getElementById('countdown').innerHTML = days + ' dias, ';
-        //document.getElementById('countdown').innerHTML = hours + ' horas, ';
-        document.getElementById('countdown').innerHTML = minutes +':' ;
-        document.getElementById('countdown').innerHTML += seconds ;
+    if(segundos == -1 && minutos !== 0){
+        setTimeout(() =>{
+            minutos--;
+        },500)
+    }else if(segundos == -1 && minutos == 0){
+        setTimeout(() =>{
+            minutos = 59;
+        },500)
     }
 
-    timer = setInterval(showRemaining, 1000);
+    //Mostrar Minutos en pantalla
+    if(minutos < 10){
+        txtMinutos = `0${minutos}`;
+    }else{
+        txtMinutos = minutos;
+    }
+    document.getElementById('minutos').innerHTML = txtMinutos;
+    cargarHoras(segundos,minutos);
+}
 
+//Definimos y ejecutamos las horas
+function cargarHoras(segundos,minutos){
+    let txtHoras;
 
-    //Alerta finalizar examen 
-
-    function alertaFinalizar(){
-        Swal.fire({
-        title: 'Estas apunto de terminar tu examen <br> ¿Estas seguro que desas continuar?',
-        icon: 'error',
-        iconHtml: 'X',
-    
-      });
+    if(segundos == -1 && minutos == 0 && horas !== 0){
+        setTimeout(() =>{
+            horas--;
+        },500)
+    }else if(segundos == -1 && minutos == 0 && horas == 0){
+        setTimeout(() =>{
+            horas = 2;
+        },500)
     }
 
+    //Mostrar Horas en pantalla
+    if(horas < 10){
+        txtHoras ='';
+    }else{
+        txtHoras = horas;
+    }
+    document.getElementById('horas').innerHTML = txtHoras;
+}
+
+//Ejecutamos cada segundo
+setInterval(cargarSegundo,1000);

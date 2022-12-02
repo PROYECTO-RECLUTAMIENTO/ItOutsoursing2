@@ -11,6 +11,8 @@ if (empty($_SESSION["folio"])) {
     <meta charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timecircles/1.5.3/TimeCircles.min.js" integrity="sha512-FofOhk0jW4BYQ6CFM9iJutqL2qLk6hjZ9YrS2/OnkqkD5V4HFnhTNIFSAhzP3x//AD5OzVMO8dayImv06fq0jA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/examen.css">
@@ -45,7 +47,7 @@ if (empty($_SESSION["folio"])) {
       </div>
     </nav>
     <div class="wrap" ><br><br>
-      <form class="formulario" action="../../Controlador/Evaluar.php" method="Post" style="background-color:white; border-radius:5px ; box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.367);" >
+      <form class="formulario" action="../../Controlador/Resultados.php" method="Post" style="background-color:white; border-radius:5px ; box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.367);" >
           <div class="info">
             <h1>Examen de Conocimiento</h1>
           </div>
@@ -59,12 +61,9 @@ if (empty($_SESSION["folio"])) {
                 $aspirante = new CtrAspirante;
                 $aspirante->listarPreguntas();
                 
-                $horainicio = $reg[4];    
-                $horafin = $reg[5] ;      
-                         
                 $reloj = new CtrAspirante;
-                $reloj-> activarReloj($horainicio, $horafin);
-                // $reloj-> activarReloj();
+                $reloj-> activarReloj();
+                //$reloj-> activarReloj();
                 
             }else{
             
