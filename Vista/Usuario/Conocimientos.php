@@ -94,7 +94,7 @@ if (empty($_SESSION["folio"])) {
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    IT Outsoursing© 2022 Copyright
+    IT Outsoursing© 2023 Copyright
   </div>
   <!-- Copyright -->
 </footer>
